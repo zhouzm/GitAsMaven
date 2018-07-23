@@ -16,12 +16,12 @@ dependencies {
 
 task javadocs(type: Javadoc) {
     failOnError false
-    source = sourceSets.main.java.sourceFiles
+    source = sourceSets.main.java
 }
 
 task sourcesJar(type: Jar) {
     classifier = 'sources'
-    from sourceSets.main.java.sourceFiles
+    from sourceSets.main.java
 }
 
 task javadocsJar(type: Jar, dependsOn: javadocs) {
