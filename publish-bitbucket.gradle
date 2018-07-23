@@ -1,7 +1,7 @@
 apply plugin: 'maven'
 
 repositories {
-    maven { url "https://raw.github.com/synergian/wagon-git/releases" }
+    maven { url "https://raw.githubusercontent.com/synergian/wagon-git/releases" }
 }
 
 configurations {
@@ -11,7 +11,7 @@ configurations {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    deployLibrary "ar.com.synergian:wagon-git:0.2.0"
+    deployLibrary "ar.com.synergian:wagon-git:0.3.0"
 }
 
 task androidJavadocs(type: Javadoc) {
@@ -38,7 +38,9 @@ task lookForArtifacts {
     doLast {
         def artifactName = ARTIFACT_NAME + '-' + ARTIFACT_VERSION + '.aar'
         def artifactPath = ARTIFACT_PACKAGE.replace(".", "/") + "/" + ARTIFACT_NAME + "/" + ARTIFACT_VERSION + "/" + artifactName
-        def repositoryUrl = 'https://api.bitbucket.org/1.0/repositories/' + COMPANY + '/' + REPOSITORY_NAME + '/raw/releases/' + artifactPath
+        def repositoryUrl = 'https://api.bitbucket.org/2.0/repositories/' + COMPANY + '/' + REPOSITORY_NAME + '/src/releases/' + artifactPath 
+                            + '?&access_token=q0kYJ-DrpZsmMFaud5dT9wxkscCjkm-kniNj3DobspqfhkjYUhlgMZ0d7APzBMg1mwaQZIoarOBox008qg=='
+        // def repositoryUrl = 'https://api.bitbucket.org/1.0/repositories/' + COMPANY + '/' + REPOSITORY_NAME + '/raw/releases/' + artifactPath
 
         println("")
         println("Checking if artifact already exists: " + artifactName)
