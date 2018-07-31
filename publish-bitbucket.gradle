@@ -86,7 +86,7 @@ def urlExists(String repositoryUrl) {
     println("responseCode: " + responseCode)
 
     if (responseCode == 401 || responseCode == 403) {
-      throw new RuntimeException("Unauthorized BitBucket user - please provide valid KEY and PRIVATE_KEY in gradle.properties file")
+      throw new RuntimeException("Unauthorized BitBucket user - please provide valid KEY and SECRET in gradle.properties file")
     }
 
     return (200 == responseCode)
