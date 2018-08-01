@@ -30,8 +30,8 @@ task javadocsJar(type: Jar, dependsOn: javadocs) {
 }
 
 artifacts {
-  archives sourcesJar
-  archives javadocsJar
+  // archives sourcesJar
+  // archives javadocsJar
 }
 
 task lookForArtifacts {
