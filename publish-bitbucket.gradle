@@ -55,7 +55,8 @@ task lookForArtifacts {
   }
 }
 
-uploadArchives.dependsOn lookForArtifacts
+// uncomment below to check existing versions
+// uploadArchives.dependsOn lookForArtifacts
 
 uploadArchives {
   repositories.mavenDeployer {
