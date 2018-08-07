@@ -61,7 +61,7 @@ task lookForArtifacts {
 uploadArchives {
   repositories.mavenDeployer {
     configuration = configurations.deployLibrary
-    repository(url: "git:releases://https://" + USERNAME + ":" + project.ACCESS_TOKEN + "@bitbucket.org/" + COMPANY +"/" + REPOSITORY_NAME + ".git")
+    repository(url: "git:releases://https://x-token-auth:" + project.ACCESS_TOKEN + "@bitbucket.org/" + COMPANY +"/" + REPOSITORY_NAME + ".git")
 
     uniqueVersion = true
 
